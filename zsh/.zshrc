@@ -41,13 +41,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 PURE_PROMPT_SYMBOL=λ
 
 # jenv (jenv.be)
-if which jenv &> /dev/null; then eval "$(jenv init -)"; fi
+#if which jenv &> /dev/null; then eval "$(jenv init -)"; fi
 
 # rbenv
-if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
+#if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 
 # z
-. /usr/local/etc/profile.d/z.sh
+#. /usr/local/etc/profile.d/z.sh
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

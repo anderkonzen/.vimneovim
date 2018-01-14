@@ -37,6 +37,19 @@ brew bundle
 
 this will install `stow` and other necessary apps. Of course, you need [`brew`](https://brew.sh) installed to run this command.
 
+## Linux
+
+### Configuring the shell
+
+Install fzf
+1. Install zsh
+2. Install [`zplug`](https://github.com/zplug/zplug)
+3. Rename your .zshrc to something else if you want a backup, then execute `stow zsh`.
+Restart the shell so zplug installs the plugins.
+4. base16: git submodule update --init --recursive then stow base16
+
+
+
 # Configuring other apps
 
 ## git

@@ -49,6 +49,9 @@ PURE_PROMPT_SYMBOL=λ
 # z
 #. /usr/local/etc/profile.d/z.sh
 
+# fasd
+eval "$(fasd --init auto)"
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'

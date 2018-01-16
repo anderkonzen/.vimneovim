@@ -1,5 +1,10 @@
 export DOTFILES=$HOME/.dotfiles
 
+source $DOTFILES/zsh/.local_profile
+export PATH=$PATH:/usr/local/go/bin
+
+export PATH=$PATH:$HOME/Tools/apache-maven-3.5.2:$HOME/Tools/apache-maven-3.5.2/bin
+
 source ~/.zplug/init.zsh
 
 # Let zplug manage zplug
@@ -11,6 +16,7 @@ zplug "plugins/git",            from:oh-my-zsh, depth:1
 zplug "plugins/docker",         from:oh-my-zsh, depth:1
 zplug "plugins/docker-compose", from:oh-my-zsh, depth:1
 zplug "plugins/extract",        from:oh-my-zsh, depth:1
+zplug "lukechilds/zsh-nvm",     from:github, depth:1
 zplug "robbyrussell/oh-my-zsh", use:"lib/grep.zsh", depth:1
 zplug "robbyrussell/oh-my-zsh", use:"lib/key-bindings.zsh", depth:1
 
@@ -44,7 +50,13 @@ PURE_PROMPT_SYMBOL=λ
 #if which jenv &> /dev/null; then eval "$(jenv init -)"; fi
 
 # rbenv
-#if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # z
 #. /usr/local/etc/profile.d/z.sh
@@ -62,3 +74,4 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 
 # Other files with pattern _*.zsh will be sourced
 for config ($DOTFILES/zsh/_*.zsh) source $config
+

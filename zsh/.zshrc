@@ -1,9 +1,6 @@
 export DOTFILES=$HOME/.dotfiles
 
 source $DOTFILES/zsh/.local_profile
-export PATH=$PATH:/usr/local/go/bin
-
-export PATH=$PATH:$HOME/Tools/apache-maven-3.5.2:$HOME/Tools/apache-maven-3.5.2/bin
 
 source ~/.zplug/init.zsh
 
@@ -47,7 +44,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 PURE_PROMPT_SYMBOL=λ
 
 # jenv (jenv.be)
-#if which jenv &> /dev/null; then eval "$(jenv init -)"; fi
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -75,3 +73,13 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 # Other files with pattern _*.zsh will be sourced
 for config ($DOTFILES/zsh/_*.zsh) source $config
 
+# Add other apps to PATH
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/Tools/apache-maven-3.5.2:$HOME/Tools/apache-maven-3.5.2/bin
+export PATH=$PATH:$HOME/Tools/consul
+export JAVA_HOME="$(jenv javahome)"
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/anderson.konzen/.sdkman"
+[[ -s "/home/anderson.konzen/.sdkman/bin/sdkman-init.sh" ]] && source "/home/anderson.konzen/.sdkman/bin/sdkman-init.sh"
